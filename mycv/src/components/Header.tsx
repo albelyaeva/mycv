@@ -15,7 +15,7 @@ const Header = ( { visibleSection }: { visibleSection: string }) => {
             </div>
             <p className="text-xl font-light text-white mt-4">Full-Stack Developer | Frontend Developer</p>
             <div className="absolute bottom-4 w-full flex justify-center" onClick={() => {
-                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('about')?.scrollIntoView({behavior: 'smooth'});
             }}
             >
                 <svg
