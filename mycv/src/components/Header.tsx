@@ -1,19 +1,33 @@
-const Header = ( { visibleSection }: { visibleSection: string }) => {
+import React, { useState } from "react";
+
+const Header = ({ visibleSection }: { visibleSection: string }) => {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+        const { clientX, clientY } = event;
+        setMousePosition({ x: clientX, y: clientY });
+    };
+
     return (
-        <div id="header"
-             className={`section bg-gray-900 w-full h-screen flex items-center justify-center transition-all duration-500 ${
-                 visibleSection === 'header' ? 'opacity-100' : 'opacity-50'
-             }`}>
-            <div className="flex justify-center content-center w-full">
-                <div className="w-[max-content] flex">
-                    <h1 className="text-3xl relative font-mono text-white overflow-hidden whitespace-nowrap
-                    border-r-2 border-white animate-typewriter">
-                        Aleksandra Beliaeva
-                    </h1>
-                    <span className="text-white animate-blink ml-1">|</span>
-                </div>
+        <div
+            id="header"
+            onMouseMove={handleMouseMove}
+            className={`section w-full h-screen flex items-center justify-center transition-all duration-500 relative ${
+                visibleSection === "header" ? "opacity-100" : "opacity-50"
+            }`}
+            style={{
+                background: `radial-gradient(
+                    circle at ${mousePosition.x}px ${mousePosition.y}px,
+                    rgba(255, 255, 255, 0.4),
+                    rgba(0, 0, 0, 0.1)
+                )`,
+            }}
+        >
+            <div className="text-center">
+                <h1 className="text-3xl relative font-mono text-white z-10 overflow-hidden whitespace-nowrap border-r-2 border-white animate-typewriter">
+                    Aleksandra Beliaeva</h1>
+                <p className="text-lg text-gray-300 mt-4">Full-Stack Developer | Frontend Developer</p>
             </div>
-            <p className="text-xl font-light text-white mt-4">Full-Stack Developer | Frontend Developer</p>
             <div className="absolute bottom-4 w-full flex justify-center" onClick={() => {
                 document.getElementById('about')?.scrollIntoView({behavior: 'smooth'});
             }}
@@ -29,6 +43,7 @@ const Header = ( { visibleSection }: { visibleSection: string }) => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"></path>
                 </svg>
             </div>
+
         </div>
     );
 };
