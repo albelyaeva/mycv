@@ -14,7 +14,7 @@ const About = ( { visibleSection }: { visibleSection: string } ) => {
             </div>
 
             <div className="w-full flex justify-center">
-                <p className="mt-5 w-1/2 text-start">
+                <p className="mt-5 sm:w-1/2 text-start">
                     I’m a motivated and skilled software developer with international experience in web application
                     development.
                     Ive worked with different technologies including JavaScript, Java, Kotlin and frameworks like
