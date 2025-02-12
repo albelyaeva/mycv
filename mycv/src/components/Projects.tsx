@@ -58,6 +58,26 @@ const Projects: React.FC = () => {
                 "Stack: Java, Kotlin, Vert.X, TypeScript, JavaScript, Ember.js.",
             link: "https://smart.gardena.com/#/session/new"
         },
+        {
+            title: "AI image recognition",
+            description:
+                "Web Application that combines modern basic machine learning technologies. Stack: Python, Flask, Tailwind, React, tensorflow",
+            link: "https://ai-image-recognition.vercel.app/"
+        },
+        {
+            title: "Online game application",
+            description:
+                "Here I'm showing my creativity skills. I wanted to make my portfolio more interactive and engaging, showcasing my frontend expertise. ",
+            link: "https://portfolio-game-blue.vercel.app/"
+        },
+        {
+            title: "Web Scraper for E-commerce Price Tracking",
+            description:
+                "Extracts product prices, descriptions, and images from e-commerce websites" +
+                "Saves results in Google Sheets & Excel for easy data access" +
+                "Generates data visualizations for price distributions.",
+            link: "https://github.com/albelyaeva/web-scraper"
+        },
     ];
 
     return (
